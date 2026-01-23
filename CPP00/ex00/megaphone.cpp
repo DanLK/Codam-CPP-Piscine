@@ -1,0 +1,23 @@
+#include <iostream>
+// #include <cctype>
+
+void ToUpperCase(std::string &s){
+  for (std::size_t i = 0; i < s.length(); i++){
+    s[i] = std::toupper(s[i]);
+  }
+}
+
+int main(int argc, char *argv[]){
+  if (argc == 1){
+    std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+  }
+  else{
+    for (int i = 1; i < argc; i++){
+      std::string s = argv[i];
+      ToUpperCase(s);
+      std::cout << s;
+    }
+    std::cout << std::endl;
+  }
+  return 0;
+}
