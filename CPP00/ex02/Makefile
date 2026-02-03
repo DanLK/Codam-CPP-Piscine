@@ -1,6 +1,6 @@
 NAME = test_accounts
 CXX = g++
-CXXFLAGS += -Wall -Werror -Wextra
+CXXFLAGS += -Wall -Werror -Wextra -std=c++98
 SRC = Account.cpp tests.cpp
 OBJ_DIR = ./obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
@@ -8,7 +8,7 @@ OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ)-o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
