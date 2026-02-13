@@ -1,7 +1,7 @@
-NAME = zombie
+NAME = references
 CXX = g++
-CXXFLAGS += -Wall -Werror -Wextra
-SRC = newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
+CXXFLAGS += -Wall -Werror -Wextra 
+SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)
@@ -12,7 +12,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:
+clean: 
 	rm -f $(OBJ)
 
 fclean: clean

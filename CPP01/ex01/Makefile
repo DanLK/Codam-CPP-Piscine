@@ -1,7 +1,7 @@
-NAME = zombie
+NAME = zombieHorde
 CXX = g++
-CXXFLAGS += -Wall -Werror -Wextra
-SRC = newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
+CXXFLAGS += -Wall -Wextra -Werror
+SRC = Zombie.cpp zombieHorde.cpp main.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)
