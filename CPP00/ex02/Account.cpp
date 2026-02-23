@@ -1,5 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 Account::Account(int intial_deposit){
 	this->_accountIndex = Account::_nbAccounts;
@@ -75,7 +76,15 @@ void	Account::displayStatus( void ) const{
 }
 
 void	Account::_displayTimestamp( void ){
-	std::cout << "[Insert time here] ";
+	std::time_t timestamp = time(NULL);
+	struct tm datetime = *localtime(&timestamp);
+
+	char	time_output[18];
+
+	std::strftime(time_output, 18, "[%G%m%d_%H%M%S]", &datetime);
+	
+	std::cout << time_output;
+
 }
 
 Account::~Account( void ){

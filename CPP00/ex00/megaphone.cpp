@@ -1,5 +1,4 @@
 #include <iostream>
-// #include <cctype>
 
 void ToUpperCase(std::string &s){
   for (std::size_t i = 0; i < s.length(); i++){

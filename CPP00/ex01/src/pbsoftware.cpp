@@ -37,17 +37,50 @@ bool PromptUser( std::string &option ){
   return false;
 }
 
+bool isOnlyWhiteSpace( std::string &s){
+
+  for (std::size_t i = 0; i < s.length(); i++){
+    if (!std::isspace(s[i]))
+      return false;
+  }
+  return true;
+
+}
+
+//To transform tabs into 4 spaces
+std::string processFieldInput( std::string &s){
+
+  std::string result;
+
+  for (std::size_t i = 0; i < s.length(); i++){
+    if (s[i] == '\t'){
+      for (int j = 0; j < 4; j++){
+        result.append(1, ' ');
+      }
+    }
+    else
+      result.append(1, s[i]);
+  }
+  return result;
+
+}
+
 std::string promptField(std::string field_name){
 
   std::string value;
 
   std::cout << "Enter "<< field_name << ": ";
   while (std::getline(std::cin, value)){
+    if (isOnlyWhiteSpace(value)){
+      std::cout << "Empty " << field_name <<" entered. Try again." << std::endl;
+      std::cout << "Enter " << field_name << ": ";
+    }
     if (!value.empty())
-      return value;
-
+      return processFieldInput(value);
+    
     std::cout << "No " << field_name <<" entered. Try again." << std::endl;
     std::cout << "Enter " << field_name << ": ";
+    
   }
   return {};
 }
