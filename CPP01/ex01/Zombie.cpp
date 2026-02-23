@@ -1,9 +1,12 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie( void ) : _name("Default zombie:"){
+Zombie::Zombie( void ) : _name("Default zombie"){
+
+  std::cout << "Zombie " << this->_name << " created." << std::endl;
 }
 
 Zombie::Zombie( std::string name ) : _name(name){
+  std::cout << "Zombie " << this->_name << " created." << std::endl;
 }
 
 Zombie::~Zombie( void ){

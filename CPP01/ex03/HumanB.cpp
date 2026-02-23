@@ -7,9 +7,9 @@ HumanB::~HumanB( void ){
   std::cout << "HumanB " << this->_name << " has been destroyed." << std::endl;
 }
 
-Weapon* HumanB::getWeapon( void ){
-  return this->_weapon;
-}
+// Weapon* HumanB::getWeapon( void ){
+//   return this->_weapon;
+// }
 
 void HumanB::setWeapon( Weapon& weapon ){
   this->_weapon = &weapon;

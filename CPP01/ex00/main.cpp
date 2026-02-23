@@ -1,8 +1,14 @@
 #include "Zombie.hpp"
 
+Zombie* newZombie( std::string name );
+void randomChump( std::string name );
+
 int main( void ){
   
-  Zombie alfred = Zombie("Alfred");
-  alfred.announce();
+  Zombie *alfred = newZombie("Alfred");
+  alfred->announce();
+  delete alfred;
+
+  randomChump("Bert");
   return 0;
 }

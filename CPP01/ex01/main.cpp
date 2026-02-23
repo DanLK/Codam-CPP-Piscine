@@ -3,9 +3,17 @@
 
 int main( void ){
   
-  Zombie* horde = zombieHorde(3, "pedro");
+  int horde_size = 4;
+
+  Zombie* horde = zombieHorde(horde_size, "Pedro");
   
-  horde->announce();
+  if (!horde)
+    return 1;
+  for (int i = 0; i < horde_size; i++){
+    horde[i].announce();
+  }
+
+  delete[] horde;
 
   return 0;
 

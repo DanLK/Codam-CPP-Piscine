@@ -1,5 +1,5 @@
 NAME = harl
-CXX = g++
+CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra
 SRC = main.cpp Harl.cpp
 OBJ = $(SRC:%.cpp=%.o)

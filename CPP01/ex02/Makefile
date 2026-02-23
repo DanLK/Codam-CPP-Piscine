@@ -1,5 +1,5 @@
 NAME = references
-CXX = g++
+CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra 
 SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)

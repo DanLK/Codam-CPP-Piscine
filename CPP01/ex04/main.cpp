@@ -38,10 +38,17 @@ int main( int argc, char *argv[] ){
     std::cout << "Usage: ./string_replace <filename> <string1> <string2>" << std::endl;
     return 1;
   }
+
   
   std::string file_name = argv[1];
   std::string s1 = argv[2];
   std::string s2 = argv[3];
+
+  if (!s2.find(s1)){
+    std::cout << "Unable to do replacement. Please provide a s1 that is not contained in s2" <<
+    std::endl;
+    return 1;
+  }
   std::string outfile_name = file_name + ".replace";
 
   std::ifstream filein(file_name);

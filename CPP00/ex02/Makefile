@@ -1,5 +1,5 @@
 NAME = test_accounts
-CXX = g++
+CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra -std=c++98
 SRC = Account.cpp tests.cpp
 OBJ_DIR = ./obj

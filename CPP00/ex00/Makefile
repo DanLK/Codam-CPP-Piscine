@@ -1,7 +1,7 @@
 NAME = megaphone
 SRC = megaphone.cpp
 OBJ = $(SRC:%.cpp=%.o)
-CXX = g++
+CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra
 
 all: $(NAME)

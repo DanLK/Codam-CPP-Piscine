@@ -1,5 +1,5 @@
 NAME = zombieHorde
-CXX = g++
+CXX = c++
 CXXFLAGS += -Wall -Wextra -Werror
 SRC = Zombie.cpp zombieHorde.cpp main.cpp
 OBJ = $(SRC:%.cpp=%.o)

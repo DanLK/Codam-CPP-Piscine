@@ -1,5 +1,5 @@
-NAME = violence
-CXX = g++
+NAME = unnecessary_violence
+CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra
 SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 OBJ = $(SRC:%.cpp=%.o)

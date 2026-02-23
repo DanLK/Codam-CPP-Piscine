@@ -1,5 +1,5 @@
 NAME = string_replace
-CXX = g++
+CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra
 SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)
