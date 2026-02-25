@@ -38,7 +38,7 @@ void	Account::displayAccountsInfos( void ){
 void	Account::makeDeposit( int deposit ){
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount <<
-	"deposit:" << deposit;
+	";deposit:" << deposit;
 	this->_amount += deposit;
 	this->_nbDeposits += 1;
 	Account::_totalAmount += deposit;

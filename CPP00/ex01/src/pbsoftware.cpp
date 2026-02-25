@@ -75,12 +75,13 @@ std::string promptField(std::string field_name){
       std::cout << "Empty " << field_name <<" entered. Try again." << std::endl;
       std::cout << "Enter " << field_name << ": ";
     }
-    if (!value.empty())
-      return processFieldInput(value);
-    
-    std::cout << "No " << field_name <<" entered. Try again." << std::endl;
-    std::cout << "Enter " << field_name << ": ";
-    
+    else{
+      if (!value.empty())
+        return processFieldInput(value);
+      
+      std::cout << "No " << field_name <<" entered. Try again." << std::endl;
+      std::cout << "Enter " << field_name << ": ";
+    }
   }
   return {};
 }
