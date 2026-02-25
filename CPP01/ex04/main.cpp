@@ -2,34 +2,31 @@
 #include <iostream>
 #include <fstream>
 
-std::string  replace_once( std::string big, std::string s1, std::string s2 , int pos){
+std::string replace_string( std::string big, std::string s1, std::string s2 ){
 
-  std::string before;
-  std::string after;
-  std::size_t len_small = s1.length();
+  std::string result;
+  std::size_t pos = big.find(s1);
   
-  before = big.substr(0, pos);
-  after = big.substr(pos + len_small, big.length() - before.length() - len_small);
-  
-  std::string& result = before;
-  result.append(s2).append(after);
-
-  return result;
-}
-
-
-std::string replace_in( std::string big, std::string s1, std::string s2 ){
-
-  std::string& result = big;
-  std::size_t  pos = result.find(s1);
-
-  while (pos != std::string::npos){
-    result = replace_once(result, s1, s2, pos);
-    pos = result.find(s1);
+  if (pos == std::string::npos){
+    result = big;
+    return result;
   }
-
+  std::size_t i = 0;
+  std::string before;
+  while (pos != std::string::npos){
+    before = big.substr(i, pos - i);
+    result.append(before).append(s2);
+    i = pos + s1.length();
+    pos = big.find(s1, i + 1);
+  }
+  if (i != big.length()){
+    std::string after = big.substr(i, big.length() - 1);
+    result.append(after);
+  }
+  
   return result;
 }
+
 
 int main( int argc, char *argv[] ){
 
@@ -44,11 +41,6 @@ int main( int argc, char *argv[] ){
   std::string s1 = argv[2];
   std::string s2 = argv[3];
 
-  if (!s2.find(s1)){
-    std::cout << "Unable to do replacement. Please provide a s1 that is not contained in s2" <<
-    std::endl;
-    return 1;
-  }
   std::string outfile_name = file_name + ".replace";
 
   std::ifstream filein(file_name);
@@ -66,7 +58,7 @@ int main( int argc, char *argv[] ){
 
   std::string line;
   while (getline(filein, line)){
-    std::string result = replace_in(line, s1, s2);
+    std::string result = replace_string(line, s1, s2);
     fileout << result << std::endl;
   }
 
