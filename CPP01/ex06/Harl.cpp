@@ -13,13 +13,13 @@ void Harl::complain( std::string level ){
   switch (getLevel(level))
   {
     case DEBUG:
-      this->debug();
+      this->_debug();
     case INFO:
-      this->info();
+      this->_info();
     case WARNING:
-      this->warning();
+      this->_warning();
     case ERROR:
-      this->error();
+      this->_error();
       break;
     default:
       std::cout << "Invalid complain level." << std::endl;
@@ -27,18 +27,18 @@ void Harl::complain( std::string level ){
   
 }
 
-void Harl::debug( void ){
+void Harl::_debug( void ){
   std::cout << "[ DEBUG ]" << std::endl << "This is some debug message" << std::endl;
 }
 
-void Harl::info( void ){
+void Harl::_info( void ){
   std::cout << "[ INFO ]" << std::endl << "This is some info" << std::endl;
 }
 
-void Harl::warning( void ){
+void Harl::_warning( void ){
   std::cout << "[ WARNING ]" << std::endl << "This is some warning" << std::endl;
 }
 
-void Harl::error( void ){
+void Harl::_error( void ){
   std::cout << "[ ERROR ]" << std::endl << "This is some error" << std::endl;
 }

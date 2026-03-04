@@ -2,16 +2,6 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-// int main( void ){
-
-//   Weapon* weapon = new Weapon("broom");
-//   std::cout << weapon->getType() << std::endl;
-
-//   delete weapon;
-
-//   return 0;
-// }
-
 int main()
 {
 {

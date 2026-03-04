@@ -39,6 +39,10 @@ int main( int argc, char *argv[] ){
   
   std::string file_name = argv[1];
   std::string s1 = argv[2];
+  if (s1.length() < 1){
+    std::cout << "The string to look for must be non-empty" << std::endl;
+    return 1;
+  }
   std::string s2 = argv[3];
 
   std::string outfile_name = file_name + ".replace";

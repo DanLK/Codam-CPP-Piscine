@@ -8,6 +8,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@ echo $(NAME) made successfully
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
