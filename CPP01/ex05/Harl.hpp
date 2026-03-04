@@ -2,7 +2,6 @@
 #define HARL_H
 #include <iostream>
 #include <string>
-#include <map>
 
 
 class Harl{
@@ -14,7 +13,8 @@ class Harl{
 
   private:
 
-  static std::map<std::string, fnptr> _levels_map;
+  static std::string _levels_names[4];
+  static fnptr _complaints[4];
   void _debug( void );
   void _info( void );
   void _warning( void );

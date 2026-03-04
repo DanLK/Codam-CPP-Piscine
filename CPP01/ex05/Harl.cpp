@@ -2,14 +2,14 @@
 
 void Harl::complain( std::string level ){
 
-  if (level != "debug" && level != "info" && level != "warning" &&
-    level != "error"){
-      std::cout << "[" << level << "] Invalid complain level." << std::endl;
+  for (int i = 0; i < 4; i++){
+    if (_levels_names[i] == level){
+      fnptr complaint = _complaints[i];
+      (this->*complaint)();
       return ;
+    }
   }
-  fnptr complaint = _levels_map[level];
-  (this->*complaint)();
-  
+  std::cout << "Invalid complain level." << std::endl;
 }
 
 void Harl::_debug( void ){
@@ -28,8 +28,6 @@ void Harl::_error( void ){
   std::cout << "This is some error" << std::endl;
 }
 
-std::map<std::string, Harl::fnptr> Harl::_levels_map = {
-  {"debug", &Harl::_debug},
-  {"info", &Harl::_info},
-  {"warning", &Harl::_warning},
-  {"error", &Harl::_error}};
+std::string Harl::_levels_names[4] = {"debug", "info", "warning", "error"};
+Harl::fnptr Harl::_complaints[4] = {&Harl::_debug, &Harl::_info, &Harl::_warning,
+                                    &Harl::_error};

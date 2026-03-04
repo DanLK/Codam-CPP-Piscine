@@ -57,6 +57,7 @@ int main( int argc, char *argv[] ){
   std::ofstream fileout(outfile_name);
   if (!fileout.is_open()){
     std::cout << "Unable to create .replace file" << std::endl;
+    filein.close();
     return 1;
   }
 
