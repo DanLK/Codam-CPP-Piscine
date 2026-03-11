@@ -17,14 +17,16 @@ class Fixed{
     int getRawBits( void ) const;
     void setRawBits( int const raw );
 
-
+    int toInt( void ) const;
+    float toFloat( void) const;
 
   private:
 
-    int _raw_bits;
-    static const int _fractional_bits = 8;
+    int _rawBits;
+    static const int _fractionalBits = 8;
 
 };
 
+std::ostream& operator<<(std::ostream & o, Fixed const & fixed ); 
 
 #endif
