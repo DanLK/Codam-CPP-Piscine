@@ -9,7 +9,7 @@ Fixed::Fixed( const int n ) : _rawBits(n << this->_fractionalBits) {
   std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float f ) : _rawBits((f * (1 << this->_fractionalBits))) {
+Fixed::Fixed( const float f ) : _rawBits((f * (1 << this->_fractionalBits) + (f >= 0 ? 0.5 : -0.5))) {
   std::cout << "Float constructor called" << std::endl;
 }
 
