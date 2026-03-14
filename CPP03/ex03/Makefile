@@ -1,9 +1,9 @@
-NAME = scavTrap
+NAME = allTraps
 CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra
 SRC_DIR = ./src
 OBJ_DIR = ./obj
-SRC = ScavTrap.cpp ClapTrap.cpp main.cpp
+SRC = DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 GREEN = \033[32m
