@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed( void ): _rawBits(0) {
   std::cout << "Default constructor called" << std::endl;
@@ -8,7 +9,7 @@ Fixed::Fixed( const int n ) : _rawBits(n << this->_fractionalBits){
   std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float f ) : _rawBits((f * (1 << this->_fractionalBits))) {
+Fixed::Fixed( const float f ) : _rawBits(roundf(f * (1 << this->_fractionalBits))) {
   std::cout << "Float constructor called" << std::endl;
 }
 

@@ -18,6 +18,11 @@ int main( void ) {
   std::cout << "c is " << c.toInt() << " as integer" << std::endl;
   std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
+  Fixed const z(3.1f);
+  std::cout << "z is: " << z.getRawBits() << std::endl;
+  std::cout << "z is " << z << std::endl;
+  std::cout << "z is " << z.toInt() << " as integer" << std::endl;
+
   return 0;
 
 }

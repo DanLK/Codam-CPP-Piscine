@@ -16,11 +16,12 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap::ClapTrap(name + "_clap_
 
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const & other ) :
-    ClapTrap::ClapTrap(other.getName() + "_clap_name", other.getHitPoints(), other.getEnergyPoints(),
-                        other.getAttackDamage()), ScavTrap(), FragTrap() {
-  this->_name = other.getName();
-  std::cout << "DiamondTrap copy constructor called" << std::endl;
+DiamondTrap::DiamondTrap( DiamondTrap const & other ) : 
+  ClapTrap::ClapTrap(other.getName() + "_clap_name", other.getHitPoints(),
+  other.getEnergyPoints(), other.getAttackDamage()), ScavTrap(), FragTrap() {
+
+    this->_name = other.getName();
+    std::cout << "DiamondTrap copy constructor called" << std::endl;
 
 }
 

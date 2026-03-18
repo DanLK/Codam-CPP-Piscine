@@ -1,19 +1,20 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) : _name("Default"), _hitPoints(10), _energyPoints(10),
-                             _attackDamage(0) {
+  _attackDamage(0) {
   std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10),
-                             _attackDamage(0) {
+ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10),
+  _energyPoints(10), _attackDamage(0) {
   std::cout << "ClapTrap parametrized constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( ClapTrap const & other ) : _name(other._name), _hitPoints(other._hitPoints),
-  _energyPoints(other._energyPoints), _attackDamage(other._attackDamage) {
+ClapTrap::ClapTrap( ClapTrap const & other ) : _name(other._name),
+  _hitPoints(other._hitPoints), _energyPoints(other._energyPoints),
+  _attackDamage(other._attackDamage) {
 
-    std::cout << "ClapTrap copy constructor called" << std::endl;
+  std::cout << "ClapTrap copy constructor called" << std::endl;
 
 }
 
@@ -67,12 +68,12 @@ void ClapTrap::attack( const std::string& target ){
     " causing " << this->_attackDamage << " points of damage." << std::endl;
     // std::cout << "Hit points left: " << this->_hitPoints << std::endl;
   }
-  if (this->_hitPoints <= 0){
-    std::cout << "[Insufficient hit points] Clap Trap " << this->_name <<
-        " unable to attack " << target << "." << std::endl;
-  }
   if (this->_energyPoints <= 0){
     std::cout << "[Insufficient energy points] Clap Trap " << this->_name <<
+        " unable to attack " << target << "." << std::endl;
+  }
+  if (this->_hitPoints <= 0){
+    std::cout << "[Insufficient hit points] Clap Trap " << this->_name <<
         " unable to attack " << target << "." << std::endl;
   }
 
@@ -108,12 +109,12 @@ void ClapTrap::beRepaired( unsigned int amount ){
     " hit points." << std::endl;
     std::cout << "Remaining hit points: " << this->_hitPoints << std::endl;
   }
-  if (this->_hitPoints <= 0){
-    std::cout << "[Insufficient hit points] Clap Trap " << this->_name <<
-        " unable to repair itself." << std::endl;
-  }
   if (this->_energyPoints <= 0){
     std::cout << "[Insufficient energy points] Clap Trap " << this->_name <<
+        " unable to repair itself." << std::endl;
+  }
+  if (this->_hitPoints <= 0){
+    std::cout << "[Insufficient hit points] Clap Trap " << this->_name <<
         " unable to repair itself." << std::endl;
   }
 }

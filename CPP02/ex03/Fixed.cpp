@@ -5,7 +5,7 @@ Fixed::Fixed( void ): _rawBits(0) {}
 
 Fixed::Fixed( const int n ) : _rawBits(n << this->_fractionalBits) {}
 
-Fixed::Fixed( const float f ) : _rawBits((f * (1 << this->_fractionalBits) + (f >= 0 ? 0.5 : -0.5))) {}
+Fixed::Fixed( const float f ) : _rawBits(roundf(f * (1 << this->_fractionalBits))) {}
 
 Fixed::Fixed( const Fixed & other): _rawBits(other._rawBits) {}
 

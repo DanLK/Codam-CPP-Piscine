@@ -24,8 +24,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point) {
     if (crossBC_BP > zero || crossCA_CP > zero)
       return false;
   }
-  if (crossAB_AP == zero || crossBC_BP == zero || crossCA_CP == 0)
-    return true;
+  if (crossAB_AP == zero || crossBC_BP == zero || crossCA_CP == zero)
+    return false;
 
   return true;
   

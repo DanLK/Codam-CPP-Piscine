@@ -24,6 +24,7 @@ int main( void ){
   std::cout << jannine << std::endl;
 
   jannine.beRepaired(5);
+  jannine.takeDamage(1);
 
   return 0;
 }

@@ -1,6 +1,6 @@
 NAME = allTraps
 CXX = c++
-CXXFLAGS += -Wall -Werror -Wextra
+CXXFLAGS += -Wall -Werror -Wextra -Wshadow
 SRC_DIR = ./src
 OBJ_DIR = ./obj
 SRC = DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp

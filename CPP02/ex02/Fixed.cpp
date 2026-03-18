@@ -2,28 +2,28 @@
 #include <cmath>
 
 Fixed::Fixed( void ): _rawBits(0) {
-  std::cout << "Default constructor called" << std::endl;
+  // std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int n ) : _rawBits(n << this->_fractionalBits) {
-  std::cout << "Int constructor called" << std::endl;
+  // std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float f ) : _rawBits((f * (1 << this->_fractionalBits) + (f >= 0 ? 0.5 : -0.5))) {
-  std::cout << "Float constructor called" << std::endl;
+Fixed::Fixed( const float f ) : _rawBits(roundf(f * (1 << this->_fractionalBits))) {
+  // std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed & other): _rawBits(other._rawBits) {
-  std::cout << "Copy constructor called" << std::endl;
+  // std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed( void ) {
-  std::cout << "Destructor called" << std::endl;
+  // std::cout << "Destructor called" << std::endl;
 }
 
 Fixed&  Fixed::operator=( Fixed const & other ) {
 
-  std::cout << "Copy assignment operator called" << std::endl;
+  // std::cout << "Copy assignment operator called" << std::endl;
   if (this != &other)
     this->_rawBits = other.getRawBits();
 
@@ -108,7 +108,7 @@ Fixed Fixed::operator-( Fixed const & other ) {
 Fixed Fixed::operator*( Fixed const & other ) {
 
   Fixed mul = Fixed();
-  mul._rawBits = (this->_rawBits * other.getRawBits()) >> this->_fractionalBits;
+  mul._rawBits = ((long long)this->_rawBits * other.getRawBits()) >> this->_fractionalBits;
 
   return mul;
 
@@ -117,7 +117,7 @@ Fixed Fixed::operator*( Fixed const & other ) {
 Fixed Fixed::operator/( Fixed const & other ) {
 
   Fixed div = Fixed();
-  div._rawBits = (this->_rawBits << this->_fractionalBits)/ other.getRawBits();
+  div._rawBits = ((long long)this->_rawBits << this->_fractionalBits)/ other.getRawBits();
 
   return div;
 }
