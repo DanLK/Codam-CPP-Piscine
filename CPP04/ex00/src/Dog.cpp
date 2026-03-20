@@ -1,14 +1,42 @@
 #include "Dog.hpp"
 
-Dog::Dog( void ) : m_type("Dog") {
+Dog::Dog( void ) : Animal("Dog") {
   
   std::cout << "Dog default constructor called." << std::endl;
 
 }
 
-// Dog( std::string type );
-// Dog( Dog const & other );
-// ~Dog( void );
+Dog::Dog( std::string type ) : Animal("Dog") {
 
-// Dog& operator=( Dog const & other );
-// void makeSound( void );
+  std::cout << "Dog parametrized constructor called with parameter " <<
+  type << std::endl;
+
+}
+
+Dog::Dog( Dog const & other ) : Animal(other.m_type) {
+
+  std::cout << "Dog copy constructor called." << std::endl;
+
+}
+
+Dog::~Dog( void ) {
+
+  std::cout << "Dog destructor called." << std::endl;
+
+}
+
+Dog& Dog::operator=( Dog const & other ){
+
+  if (this != &other){
+    this->m_type = other.m_type;
+  }
+
+  return *this;
+
+}
+
+void Dog::makeSound( void ) const {
+
+  std::cout << "Guau guau!" << std::endl;
+
+}

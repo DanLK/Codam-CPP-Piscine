@@ -36,8 +36,14 @@ Animal& Animal::operator=( Animal const & other ){
 
 }
 
-std::string Animal::getType( void ) {
+std::string Animal::getType( void ) const {
 
   return this->m_type;
   
+}
+
+void Animal::makeSound( void ) const {
+
+  std::cout << "Generic animal sound" << std::endl;
+
 }

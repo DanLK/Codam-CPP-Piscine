@@ -1,5 +1,5 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef DOG_HPP
+#define DOG_HPP
 #include "Animal.hpp"
 
 class Dog : public Animal {
@@ -13,7 +13,7 @@ class Dog : public Animal {
 
     Dog& operator=( Dog const & other );
 
-    void makeSound( void );
+    void makeSound( void ) const;
 
 };
 
