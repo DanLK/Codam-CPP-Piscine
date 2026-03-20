@@ -11,8 +11,9 @@ int main( void ){
   std::cout << alexandra << std::endl;
 
   mario.attack("Alexandra");
-
   mario.guardGate();
+  
+  alexandra.attack("Mario");
   alexandra.highFivesGuys();
 
   return 0;

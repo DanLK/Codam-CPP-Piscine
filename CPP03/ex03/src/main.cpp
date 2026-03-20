@@ -5,6 +5,7 @@
 
 int main( void ){
 
+{  
   ScavTrap mario = ScavTrap("Mario");
   FragTrap alexandra = FragTrap("Alexandra");
 
@@ -15,6 +16,7 @@ int main( void ){
 
   mario.guardGate();
   alexandra.highFivesGuys();
+}
 
   DiamondTrap elisa = DiamondTrap("Elisa");
 
