@@ -1,9 +1,9 @@
-NAME = test_00
+NAME = test_01
 CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra -Wshadow
 SRC_DIR = ./src
 OBJ_DIR = ./obj
-SRC = Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRC = Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp main.cpp
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 GREEN = \033[32m
