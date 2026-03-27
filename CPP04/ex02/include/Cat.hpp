@@ -1,8 +1,9 @@
 #ifndef CAT_HPP
 #define CAT_HPP
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 
   public:
 
@@ -13,7 +14,14 @@ class Cat : public Animal {
 
     Cat& operator=( Cat const & other );
 
+    Brain* getBrain( void ) const;
+    void setBrain( Brain* brain );
+
     void makeSound( void ) const override;
+
+  private:
+
+    Brain* m_brain;
 
 };
 

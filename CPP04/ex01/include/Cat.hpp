@@ -17,7 +17,7 @@ class Cat : public Animal {
     Brain* getBrain( void ) const;
     void setBrain( Brain* brain );
 
-    void makeSound( void ) const;
+    void makeSound( void ) const override;
 
   private:
 
