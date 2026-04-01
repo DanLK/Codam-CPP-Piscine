@@ -1,6 +1,7 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 #include <iostream>
+#include "ICharacter.hpp"
 
 class AMateria{
 
@@ -20,7 +21,7 @@ class AMateria{
 
   protected:
 
-    std::string const & m_type;
+    std::string m_type;
 
 
 };

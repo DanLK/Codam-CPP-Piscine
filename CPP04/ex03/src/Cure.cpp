@@ -1,13 +1,13 @@
 #include "Cure.hpp"
 
-Cure::Cure( void ) : AMateria("Cure") {
+Cure::Cure( void ) : AMateria("cure") {
 
   std::cout << "Cure default constructor called." << std::endl;
 
 }
 
 
-Cure::Cure( Cure const & other ) : m_type(other.m_type) {
+Cure::Cure( Cure const & other ) : AMateria(other.m_type) {
 
   std::cout << "Cure copy constructor called." << std::endl;
 
@@ -31,9 +31,10 @@ Cure& Cure::operator=(Cure const & other ) {
 
 AMateria* Cure::clone( void ) const {
 
-  AMateria* new_cure = new AMateria("cure");
+  AMateria* clone = new Cure();
 
-  return new_cure;
+  return clone;
+
 
 }
 

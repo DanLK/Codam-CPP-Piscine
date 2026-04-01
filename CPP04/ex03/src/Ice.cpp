@@ -7,7 +7,7 @@ Ice::Ice( void ) : AMateria("ice") {
 }
 
 
-Ice::Ice( Ice const & other ) : m_type(other.m_type) {
+Ice::Ice( Ice const & other ) : AMateria(other.m_type) {
 
   std::cout << "Ice copy constructor called." << std::endl;
 
@@ -31,9 +31,9 @@ Ice& Ice::operator=(Ice const & other ) {
 
 AMateria* Ice::clone( void ) const {
 
-  AMateria* new_ice = new AMateria("ice");
+  AMateria* clone = new Ice();
 
-  return new_ice;
+  return clone;
 
 }
 

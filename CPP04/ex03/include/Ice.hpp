@@ -13,7 +13,7 @@ class Ice : public AMateria {
     Ice& operator=(Ice const & other );
 
     AMateria* clone( void ) const override;
-    void use( ICharacter& target );
+    void use( ICharacter& target ) override;
 
 };
 

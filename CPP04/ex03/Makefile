@@ -3,7 +3,7 @@ CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra -Wshadow
 SRC_DIR = ./src
 OBJ_DIR = ./obj
-SRC = AMateria.cpp Ice.cpp Cure.cpp Character.cpp main.cpp
+SRC = AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp main.cpp
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 GREEN = \033[32m

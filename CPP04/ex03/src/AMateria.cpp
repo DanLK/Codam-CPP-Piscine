@@ -35,7 +35,7 @@ AMateria& AMateria::operator=( AMateria const & other ) {
 
 }
 
-std::string const & getType( void ) const {
+std::string const & AMateria::getType( void ) const {
 
   return this->m_type;
 
@@ -43,5 +43,5 @@ std::string const & getType( void ) const {
 
 void AMateria::use(ICharacter& target) {
 
-  
+  (void)target;
 }
