@@ -20,49 +20,76 @@ int main ( void ){
   // delete ice;
   // delete dani;
 
-  IMateriaSource* src = new MateriaSource();
+  {
+    std::cout << "[Test 01] Subject Main" << std::endl;
 
-  src->learnMateria(new Ice());
-  src->learnMateria(new Cure());
-  
-  ICharacter* me = new Character("me");
+    IMateriaSource* src = new MateriaSource();
 
-  
-  AMateria* tmp;
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    // for (int i = 0; i < 5; i++)
+    //   src->learnMateria(new Ice());
 
-  tmp = src->createMateria("ice");
-  me->equip(tmp);
+    ICharacter* me = new Character("me");
 
-  me->printMaterias();
+    
+    AMateria* tmp;
 
-  delete tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
 
-  tmp = src->createMateria("cure");
-  me->equip(tmp);
+    me->printMaterias();
 
-  me->printMaterias();
-  
-  
-  me->use(0, *me);
-  
-  ICharacter* bob = new Character("bob");
-  me->use(1, *bob);
-  me->unequip(0);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
 
-  me->printMaterias();
-  
-  me->unequip(1);
+    me->printMaterias();
+    
+    
+    
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
+    me->unequip(0);
 
-  me->printMaterias();
+    me->printMaterias();
+    
+    me->unequip(1);
 
-  me->unequip(2);
-  me->unequip(3);
+    me->printMaterias();
 
-  delete bob;
-  delete tmp;
-  delete me;
-  delete src;
+    me->unequip(2);
+    me->unequip(3);
 
+    delete bob;
+    delete me;
+    delete src;
+  }
+
+  // {
+  //   std::cout << "[Test 02] Unequipping materias" << std::endl;
+
+  //   ICharacter* fido = new Character("Fido");
+
+  //   for (int i = 0; i < 100; i++){
+  //     fido->equip(new Ice());
+  //     fido->unequip(0);
+  //   }
+  //   fido->equip(new Cure());
+  //   fido->equip(new Cure());
+  //   fido->equip(new Cure());
+  //   fido->equip(new Cure());
+    
+  //   AMateria* cure = new Cure(); // If you try to equip when it's full, ownership is not taken
+  //   fido->equip(cure);
+  //   delete cure;
+
+  //   fido->printMaterias();
+  //   fido->unequip(0);
+  //   fido->printMaterias();
+
+  //   delete fido;
+  // }
 
   return 0;
 }

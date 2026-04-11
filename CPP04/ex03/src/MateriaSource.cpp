@@ -5,7 +5,7 @@ MateriaSource::MateriaSource( void ) {
   for (int i = 0; i < 4; i++){
     this->m_known_materias[i] = nullptr;
   }
-  std::cout << "MateriaSource default constructor called." << std::endl;
+  // std::cout << "MateriaSource default constructor called." << std::endl;
 
 }
 
@@ -15,7 +15,7 @@ MateriaSource::MateriaSource( MateriaSource const & other ){
   for (int i = 0; i < 4; i++){
     this->m_known_materias[i] = other.m_known_materias[i]->clone();
   }
-  std::cout << "MateriaSource copy constructor called." << std::endl;
+  // std::cout << "MateriaSource copy constructor called." << std::endl;
 }
 
 
@@ -25,7 +25,7 @@ MateriaSource::~MateriaSource( void ){
   for (int i = 0; i < 4; i++){
     delete this->m_known_materias[i];
   }
-  std::cout << "MateriaSource destructor called." << std::endl;
+  // std::cout << "MateriaSource destructor called." << std::endl;
 
 }
 
@@ -46,9 +46,14 @@ void MateriaSource::learnMateria(AMateria* m) {
 
   for (int i = 0; i < 4; i++){
     if (this->m_known_materias[i] == nullptr) {
-      this->m_known_materias[i] = m;
+      this->m_known_materias[i] = m->clone();
+      delete m;
       // std::cout << i << std::endl;
-      break;
+      return ;
+    }
+    if (i == 3) {
+      delete m;
+      std::cout << "Space for known materias is full. Did not learn materia. Materia has been deleted." << std::endl;
     }
   }
 }
