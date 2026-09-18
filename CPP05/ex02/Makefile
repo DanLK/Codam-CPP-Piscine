@@ -1,9 +1,9 @@
-NAME = form
+NAME = concreteForms
 CXX = c++
 CXXFLAGS += -Wall -Werror -Wextra
 SRC_DIR = ./src
 OBJ_DIR = ./obj
-SRC = Form.cpp Bureaucrat.cpp main.cpp
+SRC = ShrubberyCreationForm.cpp AForm.cpp Bureaucrat.cpp main.cpp
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 GREEN = \033[32m

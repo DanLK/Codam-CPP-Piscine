@@ -1,6 +1,6 @@
 NAME = bureaucrat
 CXX = c++
-CXXFLAGS += -Wall -Werror -Wextra -Wshadow
+CXXFLAGS += -Wall -Werror -Wextra
 SRC_DIR = ./src
 OBJ_DIR = ./obj
 SRC = Bureaucrat.cpp main.cpp
